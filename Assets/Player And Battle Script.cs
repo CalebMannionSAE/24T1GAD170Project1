@@ -59,18 +59,31 @@ public class PlayerAndBattleScript : MonoBehaviour
     {
         if (playerXPCap <= 20)
         {
-            Debug.Log("Congratulations on the Level up, your level is now 2");
+            Debug.Log("Congratulations on the Level up!");
             playerExpereince = 0;
             playerHealth = playerHealth + 50;
             playerAttackDamage = playerAttackDamage + 20;
             playerLevel = playerLevel + 1;
             enemyHealth = playerAttackDamage * 10;
+            EndGame();
 
             Debug.Log("Lets have a look at your stats! You health is now at:" + playerHealth + "Your Attack Damage is now at: " + playerAttackDamage + "Your Level is Now: " + playerLevel);
             Debug.Log("Your Experience has been reset to: " + playerExpereince);
-            Debug.Log("Oh NO!!! This one is higher level, destroy this one now with your upgraded stats! its health is now at " + enemyHealth)
+            Debug.Log("Oh NO!!! This one is higher level, destroy this one now with your upgraded stats! its health is now at " + enemyHealth);
         }
     }
+
+
+    void EndGame()
+    {
+        if (playerLevel == 5)
+        {
+            Destroy(gameObject);
+            Debug.Log("Congratulations on winning the game, thank you for Playing!");
+        }
+    }
+
+    
 
 
 }
