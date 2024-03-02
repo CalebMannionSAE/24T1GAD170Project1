@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class NewScript : MonoBehaviour
+public class PlayerAndBattleScript : MonoBehaviour
 {
 
     public int playerHealth = 100;
@@ -59,7 +59,7 @@ public class NewScript : MonoBehaviour
     {
         if (playerXPCap <= 20)
         {
-            Debug.Log("Congratulations on the Level up, Your level is now 2");
+            Debug.Log("Congratulations on the Level up, your level is now 2");
             playerExpereince = 0;
             playerHealth = playerHealth + 50;
             playerAttackDamage = playerAttackDamage + 20;
@@ -68,7 +68,7 @@ public class NewScript : MonoBehaviour
 
             Debug.Log("Lets have a look at your stats! You health is now at:" + playerHealth + "Your Attack Damage is now at: " + playerAttackDamage + "Your Level is Now: " + playerLevel);
             Debug.Log("Your Experience has been reset to: " + playerExpereince);
-            Debug.Log("Oh NO!!! This one is higher level, destroy this one now with your upgraded stats! its health is now at ")
+            Debug.Log("Oh NO!!! This one is higher level, destroy this one now with your upgraded stats! its health is now at " + enemyHealth)
         }
     }
 
