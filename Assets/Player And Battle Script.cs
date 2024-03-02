@@ -46,7 +46,6 @@ public class NewScript : MonoBehaviour
         if (enemyHealth <= 0)
         {
             Debug.Log("God that was scary, good kill. Your Reward is XP! Here have 20 xp");
-            Destroy(gameObject);
             playerExpereince++;
             Victory();
             
@@ -65,9 +64,11 @@ public class NewScript : MonoBehaviour
             playerHealth = playerHealth + 50;
             playerAttackDamage = playerAttackDamage + 20;
             playerLevel = playerLevel + 1;
+            enemyHealth = playerAttackDamage * 10;
 
             Debug.Log("Lets have a look at your stats! You health is now at:" + playerHealth + "Your Attack Damage is now at: " + playerAttackDamage + "Your Level is Now: " + playerLevel);
             Debug.Log("Your Experience has been reset to: " + playerExpereince);
+            Debug.Log("Oh NO!!! This one is higher level, destroy this one now with your upgraded stats! its health is now at ")
         }
     }
 
